@@ -1,0 +1,22 @@
+#parent {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    position: absolute;
+}
+
+#horizontal {
+    width: 200px;
+    height: 10px;
+    position: absolute;
+    top: 20px;
+    background-color: red;
+}
+
+#vertical {
+    width: 10px;
+    height: 200px;
+    position: absolute;
+    left: 20px;
+    background-color: red;
+}

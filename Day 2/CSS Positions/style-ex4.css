@@ -1,0 +1,18 @@
+#container {
+    background-color: black;
+    width: 423px;
+    height: 215px;;
+    position: absolute;
+}
+.squares {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: #66320E;
+    margin-left: 2px;
+    margin-top: 2px;
+}
+#line {
+    background-color: darkred;
+    height: 5px;
+}
