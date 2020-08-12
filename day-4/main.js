@@ -76,13 +76,13 @@ turnToKing("martin luther", 100) // should print "His Royal Highness, MARTIN LUT
 
 // extension
 
-const looper = function(arr, newArr, start, deleteCount, item) {
+const looper = function(arr, newArr, deletedArr, start, deleteCount, item) {
     isItems = false
     for(let i in arr){
         if(i < start){
             newArr.push(arr[i])
         } else{
-            if(item.length > 0 && !isItems) {
+            if(item.length > 0 && isItems === false) {
                 for (n of item) {
                     newArr.push(n)
                 }
@@ -91,6 +91,7 @@ const looper = function(arr, newArr, start, deleteCount, item) {
             if (deleteCount <= 0 ) {
                 newArr.push(arr[i])
             } else {
+                deletedArr.push(arr[i])
                 deleteCount--
             }
         }
@@ -111,19 +112,23 @@ const startChecker = function(start, arr) {
             start = 0
         }
     }
-    console.log(start)
     return start
 }
 
-const splice1 = function(arr, start, deleteCount, ...item){
+const splice = function(arr, start, deleteCount = arr.length, ...item){
     let newArr = []
+    let deletedArr = []
     start = startChecker(start, arr)
     if (start < arr.length) {
-        looper(arr, newArr, start, deleteCount, item)
+        looper(arr, newArr, deletedArr, start, deleteCount, item)
     } else {
         newArr = adder(arr, newArr, item)
     }
-    return newArr
+    arr.length = newArr.length
+    for (n in newArr) {
+        arr[n] = newArr[n]
+    }
+    return deletedArr
 }
 
 // let arr = [1,2,3,4,5]
@@ -135,41 +140,47 @@ const splice1 = function(arr, start, deleteCount, ...item){
 
 // remove 1 element
 let arr = [1,2,3]
-arr.splice(0,1); 
+splice(arr, 0,1); 
 console.log(arr); //should be [2,3]
 
 
 // add 1 element
 arr = [1,2,3]
-arr.splice(0,0,0); 
+splice(arr, 0,0,0); 
 console.log(arr); //should be [0,1,2,3]
+
+
+// add 2 elements
+arr = [1,2,3]
+splice(arr,0,0,-1,0); 
+console.log(arr); //should be [-1,0,1,2,3]
 
 
 // replace 1 element
 arr = [1,2,3]
-arr.splice(1,1,55); 
+splice(arr,1,1,55); 
 console.log(arr); //should be [1,55,3] 
 
 
 // delete all elements from index to end
 arr = [1,2,3,4,5]
-arr.splice(1); 
+splice(arr,1); 
 console.log(arr); //should be [1] 
 
 
 // returns array of deleted elements
 arr = [1,2,3]
-let deleted = arr.splice(1); 
+let deleted = splice(arr,1); 
 console.log(deleted); //should be [2,3] 
 
 
 // returns an array of the deleted element (1 element)
 arr = [1,2,3]
-deleted = arr.splice(1,1); 
+deleted = splice(arr,1,1); 
 console.log(deleted); //should be [2] 
 
 
 // returns an empty array when no elements are deleted
 arr = [1,2,3]
-deleted = arr.splice(1,0,5); 
+deleted = splice(arr,1,0,5); 
 console.log(deleted); //should be [] 
