@@ -131,13 +131,6 @@ const splice = function(arr, start, deleteCount = arr.length, ...item){
     return deletedArr
 }
 
-// let arr = [1,2,3,4,5]
-// arr = [...splice1(arr, 8 , 1, 6, 8 , 9)]
-// console.log(arr)
-// let arr1 = [1,2,3,4,5]
-// arr1.splice(8 , 1, 6, 8, 9)
-// console.log(arr1)
-
 // remove 1 element
 let arr = [1,2,3]
 splice(arr, 0,1); 
@@ -184,3 +177,4 @@ console.log(deleted); //should be [2]
 arr = [1,2,3]
 deleted = splice(arr,1,0,5); 
 console.log(deleted); //should be [] 
+
