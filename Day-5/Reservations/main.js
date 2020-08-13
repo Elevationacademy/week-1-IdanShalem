@@ -7,9 +7,10 @@ const reservations = {
   const messageBody = document.getElementById("message")
 
   clicked.onclick = function() {
-    let name = document.getElementById("res-name").value
-    name = name.charAt(0).toUpperCase() + name.slice(1)
-    checkReservation(name)
+    let name = document.getElementById("res-name")
+    let resName = name.value
+    resName = resName.charAt(0).toUpperCase() + resName.slice(1).toLowerCase()
+    checkReservation(resName)
     name.value = ''
   }
 
