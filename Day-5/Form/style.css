@@ -1,0 +1,39 @@
+#form-div {
+    width: 380px;
+    height: 250px;
+    background-color: #34495e;
+    border: 10px #2c3e50 solid;
+    border-radius: 10px;
+}
+.inputs {
+    position: absolute;
+}
+#name-input{
+    top: 20px;
+    left: 30px;
+}
+#salary-input{
+    top: 80px;
+    left: 30px;
+}
+#bd-input{
+    top: 80px;
+    left: 220px;
+}
+#phone-input{
+    top: 140px;
+    left: 30px;
+}
+#submit{
+    position: absolute;
+    top: 160px;
+    left: 220px;
+}
+#message {
+    position: absolute;
+    top: 190px;
+    left: 30px;
+    font-family: Arial, Helvetica, sans-serif Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
