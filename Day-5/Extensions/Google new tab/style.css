@@ -33,7 +33,6 @@
     background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/1200px-Google_mic.svg.png);
     background-size: 13px;
     background-repeat: no-repeat;
-    background-position: center center;
     display: inline-block;
     position: relative;
     top: 5px;
@@ -51,32 +50,60 @@
   input:focus {
     outline: none;
   }
-  #links {
-      position: absolute;
-      height: 300px;
-      width: 600px;
-      left: 32.5%;
-      top: 55%;
-  }
-  .linkers {
+#links {
+    position: absolute;
+    height: 300px;
+    width: 600px;
+    left: 32.5%;
+    top: 55%;
+}
+.linkers {
     position: relative;
     display: inline-block;
-    /* margin: 5px; */
     height: 100px;
     width: 100px;
     border-radius: 10px;
-  }
-  .circles {
-      position: relative;
-      background-color: rgb(194, 194, 194);
-      border-radius: 100px;
-      width: 50px;
-      height: 50px;
-      left: 25%;
-      top: 25%;
-      opacity: 0.4;
-  }
-  .linkers:hover {
-    background-color: rgb(243, 242, 242);
+    padding-bottom: 5px;
+}
+.linkers:hover {
+    background-color: rgb(248, 247, 247);
     cursor: pointer;
-  }
+}
+.circles {
+    position: relative;
+    background-color: rgb(236, 233, 233);
+    border-radius: 100px;
+    width: 50%;
+    height: 50%;
+    margin: 0 auto;
+    top: 25%;
+}
+.icons-links{
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    top:25%;
+}
+
+.text-linkers{
+    position: absolute; 
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    font-size: 12px;
+}
+
+    /* .icons-links {
+    position: absolute;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: 25px;
+    width: 25px;
+    height: 25px;
+    z-index: 1;
+    left: 38%;
+    top:38%;
+  } */
+  /* #gitHub-1{
+      background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1024px-Octicons-mark-github.svg.png);
+  } */
